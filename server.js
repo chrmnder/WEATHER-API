@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const app = express();
 const PORT = 3000;
-const API_KEY = '57515059ce2101a5953a36e6a283173b'; // Your OpenWeather API Key
+const API_KEY = '57515059ce2101a5953a36e6a283173b';
 
 app.use(cors());
 
