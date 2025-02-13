@@ -76,8 +76,8 @@ main ul{
 }
 
 main li{
-    background: linear-gradient(175deg, #727D73, #D0DDD0); /* Light transparent background */
-    border: rgb(201, 201, 201) solid; /* Semi-transparent white border */
+    background: linear-gradient(175deg, #727D73, #D0DDD0);
+    border: rgb(201, 201, 201) solid;
     border-radius: 25px;
     padding: 50px 10px;
 
