@@ -3,49 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
     <main>
-        <form action="">
-            <input type="text" autocomplete="off" id="valueSearch">
-            <button>
+        <h1 class="app-title">Weather App</h1>
+        <p class="welcome-message">Enter a city or country to check the weather.</p>
+
+        <form id="searchForm">
+            <input type="text" autocomplete="off" id="searchInput" placeholder="Enter city or country name">
+            <button type="submit">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
         </form>
 
-        <section class="result">
-            <figure class="name" id="city">
-                <figcaption>London</figcaption>
-                <img src="https://flagsapi.com/GB/shiny/32.png" alt="">
+        <section id="weatherResult" class="hidden">
+            <figure id="city">
+                <figcaption></figcaption>
+                <img src="" alt="Country Flag">
             </figure>
-            <figure class="temperature" id="temperature">
-                <img src="http://openweathermap.org/img/wn/10d@4x.png" alt="">
-                <figcaption>
-                    <span>31</span>
-                    <sup>o</sup>
-                </figcaption>
+            <figure id="temperature">
+                <img src="" alt="Weather Icon">
+                <figcaption><span></span><sup>°C</sup></figcaption>
             </figure>
-            <p class="description">Overcast clouds</p>
+            <p id="description"></p>
 
             <ul>
-                <li>
-                    <span>Clouds</span>
-                    <i class="fa-solid fa-cloud"></i>
-                    <span id="clouds">98</span>
-                </li>
-                <li>
-                    <span>Humidity</span>
-                    <i class="fa-solid fa-droplet"></i>
-                    <span id="humidity">55</span>
-                </li>
-                <li>
-                    <span>Pressure</span>
-                    <i class="fa-solid fa-gauge"></i>
-                    <span id="pressure">1001</span>hPa
-                </li>
+                <li><span>Clouds</span> <i class="fa-solid fa-cloud"></i> <span id="clouds"></span>%</li>
+                <li><span>Humidity</span> <i class="fa-solid fa-droplet"></i> <span id="humidity"></span>%</li>
+                <li><span>Wind Speed</span> <i class="fa-solid fa-wind"></i> <span id="wind-speed"></span> km/h</li>
             </ul>
         </section>
     </main>
