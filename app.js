@@ -35,25 +35,25 @@ const fetchWeather = async (city) => {
 
 // Update UI with fetched data
 const updateUI = (data) => {
-    cityName.textContent = data.name;
-    cityFlag.src = `https://flagsapi.com/${data.sys.country}/shiny/32.png`;
+    cityName.textContent = data.name; //Displays the city name
+    cityFlag.src = `https://flagsapi.com/${data.sys.country}/shiny/32.png`; //Shows the country’s flag
 
-    tempIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
-    tempValue.textContent = data.main.temp;
+    tempIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`; // Displays the weather icon
+    tempValue.textContent = data.main.temp; //Shows the temperature in °C.
 
-    description.textContent = data.weather[0].description;
-    clouds.textContent = data.clouds.all;
-    humidity.textContent = data.main.humidity;
-    windSpeed.textContent = (data.wind.speed * 3.6).toFixed(1); // Convert m/s to km/h
+    description.textContent = data.weather[0].description; //Displays a short text description of the weather
+    clouds.textContent = data.clouds.all; //Shows the percentage of cloud cover
+    humidity.textContent = data.main.humidity; //Shows the humidity percentage.
+    windSpeed.textContent = (data.wind.speed * 3.6).toFixed(1); // Shows wind speed Convert m/s to km/h
 
     weatherResult.classList.remove("hidden"); // Show the weather result section
 };
 
 
 // Event listener for search form
-searchForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const city = searchInput.value.trim();
+searchForm.addEventListener("submit", (event) => { //waits for the user to submit the form 
+    event.preventDefault(); // handle submission without reloading page
+    const city = searchInput.value.trim(); //removes extra spaces
     if (city) {
         fetchWeather(city);
         searchInput.value = ""; // Clear input field after search
